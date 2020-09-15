@@ -19,15 +19,15 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 10 } %>
 
 development:
   <<: *default
   database: projekt-db
-  username: postgres
-  password: subair
-  host: localhost
-  port: 5432
+  username: <%= ENV['DEV_DATABASE_USER'] %>
+  password: <%= ENV['DEV_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DEV_DATABASE_HOST'] %>
+  port: <%= ENV['DEV_DATABASE_PORT'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,10 +62,10 @@ development:
 test:
   <<: *default
   database: projekt_test
-  username: postgres
-  password: subair
-  host: localhost
-  port: 5432
+  username: <%= ENV['DEV_DATABASE_USER'] %>
+  password: <%= ENV['DEV_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DEV_DATABASE_HOST'] %>
+  port: <%= ENV['DEV_DATABASE_PORT'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
@@ -31,7 +32,7 @@ gem 'public_activity'
 gem "figaro"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1', :groups => [:development, :test]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
