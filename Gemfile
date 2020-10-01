@@ -30,6 +30,9 @@ gem 'jquery-rails'
 gem "wysiwyg-rails"
 gem 'public_activity'
 gem "figaro"
+
+gem 'prettier'
+gem 'rails_admin'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1', :groups => [:development, :test]
